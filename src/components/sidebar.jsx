@@ -44,7 +44,7 @@ export default function SideBar({ children }) {
         </header>
 
         <main className="mt-4">
-          <div className="m-10 p-4 border-2 border-dashed border-gray-300">
+          <div className="m-10 p-4 border-0 shadow-lg border-gray-300 rounded-md">
             {children}
           </div>
         </main>

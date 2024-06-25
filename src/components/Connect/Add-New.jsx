@@ -1,5 +1,5 @@
-const AddNew = () => {
-  return <p>Add New</p>;
+const AddNewComponent = () => {
+  return <p>Add New Component</p>;
 };
 
-export default AddNew;
+export default AddNewComponent;

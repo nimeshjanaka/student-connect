@@ -1,7 +1,10 @@
+import AddNewComponent from "@/components/Connect/Add-New";
 const AddNew = () => {
-    return ( 
-        <>Add new</>
-     );
-}
- 
+  return (
+    <div>
+     <AddNewComponent/>
+    </div>
+  );
+};
+
 export default AddNew;

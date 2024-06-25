@@ -1,10 +1,13 @@
 import React from "react";
+import AddNew from "@/components/Connect/Add-New";
 
 
-const page = () => {
+
+const Connect = () => {
   return <div className="p-24">
-    Connect Page
+    <AddNew/>
+
   </div>;
 };
 
-export default page;
+export default Connect;

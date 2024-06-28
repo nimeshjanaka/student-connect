@@ -14,22 +14,22 @@ export default function SideBar({ children }) {
         <nav className="mt-4">
           <ul className="pt-5">
             <li className="mb-4">
-              <Link href="/chat" className="text-white flex items-center space-x-2">
+              <Link href="/connect/chat" className="text-white flex items-center space-x-2">
                 <span>Chat</span>
               </Link>
             </li>
             <li className="mb-4 ">
-              <Link href="/group" className="text-white flex items-center space-x-2">
+              <Link href="/connect/group" className="text-white flex items-center space-x-2">
                 <span>Group</span>
               </Link>
             </li>
             <li className="mb-4">
-              <a href="/friends" className="text-white flex items-center space-x-2">
+              <a href="/connect/friends" className="text-white flex items-center space-x-2">
                 <span>Friends</span>
               </a>
             </li>
             <li className="mb-4">
-              <a href="/AddNew" className="text-white flex items-center space-x-2">
+              <a href="/connect/AddNew" className="text-white flex items-center space-x-2">
                 <span>Add New Friends</span>
               </a>
             </li>
@@ -39,9 +39,7 @@ export default function SideBar({ children }) {
         </nav>
       </div>
       <div className="flex-1 ml-64 p-4">
-        <header>
-          <Header />
-        </header>
+      
 
         <main className="mt-4">
           <div className="m-10 p-4 border-0 shadow-lg border-gray-300 rounded-md">

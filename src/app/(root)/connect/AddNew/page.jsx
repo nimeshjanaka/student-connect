@@ -1,4 +1,5 @@
-import AddNewComponent from "@/components/Connect/Add-New";
+
+import AddNewComponent from "../../../../components/Connect/Add-New";
 const AddNew = () => {
   return (
     <div>

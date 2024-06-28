@@ -35,13 +35,13 @@ export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white">
+    <header className="bg-slate-300">
       <nav
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <a href="#" className="-m-1.5 p-1.5">
+          <a href="/home" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <img
               className="h-8 w-auto"
@@ -64,32 +64,32 @@ export default function Header() {
           <Popover className="relative"></Popover>
 
           <a
-            href="home"
+            href="/home"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Home
           </a>
           <a
-            href="marks"
+            href="/marks"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Marks
           </a>
           <a
-            href="friends"
+            href="/connect/friends"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             connect
           </a>
           <a
-            href="profile"
+            href="/profile"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
             Profile
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/authentication" className="text-sm font-semibold leading-6 text-gray-900">
+          <a href="/authentication/login" className="text-sm font-semibold leading-6 text-gray-900">
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -135,18 +135,7 @@ export default function Header() {
                           aria-hidden="true"
                         />
                       </DisclosureButton>
-                      <DisclosurePanel className="mt-2 space-y-2">
-                        {[...products, ...callsToAction].map((item) => (
-                          <DisclosureButton
-                            key={item.name}
-                            as="a"
-                            href={item.href}
-                            className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                          >
-                            {item.name}
-                          </DisclosureButton>
-                        ))}
-                      </DisclosurePanel>
+                     
                     </>
                   )}
                 </Disclosure>
@@ -163,7 +152,7 @@ export default function Header() {
                   Marketplace
                 </a>
                 <a
-                  href="#"
+                  href="/"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Company

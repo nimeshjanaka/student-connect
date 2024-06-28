@@ -1,8 +1,8 @@
-
+import { redirect } from "next/navigation";
+import Login from '../components/Authentication/login'
 export default function Home() {
+  redirect('/authentication')
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      Home
-    </main>
+   <></>
   );
 }

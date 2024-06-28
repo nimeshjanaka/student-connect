@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import {
   Dialog,
@@ -43,10 +44,12 @@ export default function Header() {
         <div className="flex lg:flex-1">
           <a href="/home" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
-            <img
-              className="h-8 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-              alt=""
+            <Image
+            className="rounded-lg"
+              src="/assets/logo.jpg"
+              width={50}
+              height={50}
+              alt="Picture of the author"
             />
           </a>
         </div>
@@ -89,7 +92,10 @@ export default function Header() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="/authentication/login" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="/authentication/login"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -135,7 +141,6 @@ export default function Header() {
                           aria-hidden="true"
                         />
                       </DisclosureButton>
-                     
                     </>
                   )}
                 </Disclosure>

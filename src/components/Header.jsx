@@ -2,31 +2,20 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { useSession, signIn, signOut } from "next-auth/react";
 import {
   Dialog,
   DialogPanel,
   Disclosure,
   DisclosureButton,
-  DisclosurePanel,
   Popover,
-  PopoverButton,
   PopoverGroup,
-  PopoverPanel,
 } from "@headlessui/react";
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
   XMarkIcon,
-} from "@heroicons/react/24/outline";
-import {
   ChevronDownIcon,
-  PhoneIcon,
-  PlayCircleIcon,
-} from "@heroicons/react/20/solid";
+} from "@heroicons/react/24/outline";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -34,6 +23,7 @@ function classNames(...classes) {
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { data: session, status } = useSession();
 
   return (
     <header className="bg-slate-300">
@@ -45,11 +35,11 @@ export default function Header() {
           <a href="/home" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
             <Image
-            className="rounded-lg"
+              className="rounded-lg"
               src="/assets/logo.jpg"
               width={50}
               height={50}
-              alt="Picture of the author"
+              alt="Logo"
             />
           </a>
         </div>
@@ -65,7 +55,6 @@ export default function Header() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative"></Popover>
-
           <a
             href="/home"
             className="text-sm font-semibold leading-6 text-gray-900"
@@ -82,7 +71,7 @@ export default function Header() {
             href="/connect/friends"
             className="text-sm font-semibold leading-6 text-gray-900"
           >
-            connect
+            Connect
           </a>
           <a
             href="/profile"
@@ -92,12 +81,41 @@ export default function Header() {
           </a>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="/authentication/login"
-            className="text-sm font-semibold leading-6 text-gray-900"
-          >
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          {status === "loading" ? (
+            <p>Loading...</p>
+          ) : session ? (
+            <div className="flex flex-col items-center">
+              <div className="flex flex-row items-center">
+              <span className="text-sm font-semibold leading-6 text-gray-900">
+                {session.user.name}
+              </span>
+              {session.user.image && (
+                <Image
+                  className="ml-4 rounded-full"
+                  src={session.user.image}
+                  width={32}
+                  height={32}
+                  alt={session.user.name}
+                />
+              )}
+         </div>
+              <button
+                className="ml-2 text-xs font-semibold leading-6 text-gray-900"
+                onClick={() => signOut()}
+              >
+                Log out
+              </button>
+
+
+            </div>
+          ) : (
+            <button
+              className="text-sm font-semibold leading-6 text-gray-900"
+              onClick={() => signIn("google")}
+            >
+              Log in with Google <span aria-hidden="true">&rarr;</span>
+            </button>
+          )}
         </div>
       </nav>
       <Dialog
@@ -113,7 +131,7 @@ export default function Header() {
               <img
                 className="h-8 w-auto"
                 src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                alt=""
+                alt="Logo"
               />
             </a>
             <button
@@ -164,12 +182,21 @@ export default function Header() {
                 </a>
               </div>
               <div className="py-6">
-                <a
-                  href="/authentication"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                >
-                  Log in
-                </a>
+                {session ? (
+                  <button
+                    className="w-full text-left -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={() => signOut()}
+                  >
+                    Log out
+                  </button>
+                ) : (
+                  <button
+                    className="w-full text-left -mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
+                    onClick={() => signIn("google")}
+                  >
+                    Log in with Google
+                  </button>
+                )}
               </div>
             </div>
           </div>

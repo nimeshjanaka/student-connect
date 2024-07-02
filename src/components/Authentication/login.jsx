@@ -1,12 +1,38 @@
-"use clint";
+"use client";
 import Image from "next/image";
+
+import { doCredentialLogin } from "../../app/actions";
+import { useRouter } from "next/navigation";
+
 export default function Login() {
+  
+  const router = useRouter();
+
+  async function handleFormSubmit(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    console.log("submitted");
+
+    try {
+      const formData = new FormData(event.currentTarget);
+
+      const response = await doCredentialLogin(formData);
+
+      if (response.error) {
+        console.log("error");
+      } else {
+        router.push('/connect/friends');
+      }
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <>
       <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
-        <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
+        <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <Image
-             className="mx-auto  w-auto"
+            className="mx-auto w-auto"
             src="/assets/logo.jpg"
             width={70}
             height={70}
@@ -18,7 +44,7 @@ export default function Login() {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={handleFormSubmit}>
             <div>
               <label
                 htmlFor="email"

@@ -63,7 +63,7 @@ export default function Header() {
           </a>
           <a
             href="/marks"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-mono leading-6 text-gray-900"
           >
             Marks
           </a>

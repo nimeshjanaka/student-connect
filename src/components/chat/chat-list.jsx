@@ -1,9 +1,10 @@
 "use client"
 
+import Persons from "../../components/chat/persons"
 const ChatList = () => {
     return ( 
-        <div>
-            Chat List
+        <div className="rounded-md p-10">
+            <Persons/>
         </div>
      );
 }

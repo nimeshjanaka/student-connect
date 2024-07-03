@@ -1,4 +1,6 @@
 "use client"
+import SeacrhInput from "../../components/chat/search-input"
+
 const people = [
     {
       name: 'Leslie Alexander',
@@ -57,6 +59,7 @@ const people = [
   export default function Persons() {
     return (
       <ul role="list" className="divide-y divide-gray-100">
+             <SeacrhInput/>
         {people.map((person) => (
           <li key={person.email} className="flex justify-between gap-x-6 py-5">
             <div className="flex min-w-0 gap-x-4">

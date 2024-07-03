@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import ChatBubble from "./chat-bubble";
+import TextInput from "../../components/chat/text-input";
 
 const ChatWindow = () => {
   const [messages, setMessages] = useState([
@@ -11,7 +12,7 @@ const ChatWindow = () => {
 
   return (
     <div>
-      <div className=" p-10">
+      <div className=" h-full">
         <div className="flex border-2 p-6 ">
           <img
             className="h-12 w-12  rounded-full bg-gray-50"
@@ -23,14 +24,18 @@ const ChatWindow = () => {
             "Lindsay Walton"
           </p>
         </div>
+        <hr className="border-t border-gray-300 my-2" />
         <div className="w-full h-full  flex flex-col p-10 ">
-            {messages.map((message, index) => (
-          <ChatBubble key={index} text={message.text} isUser={message.isUser} />
-        ))}
+          {messages.map((message, index) => (
+            <ChatBubble
+              key={index}
+              text={message.text}
+              isUser={message.isUser}
+            />
+          ))}
         </div>
-        
 
-
+        <TextInput />
       </div>
     </div>
   );

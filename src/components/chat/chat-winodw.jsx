@@ -1,9 +1,14 @@
 "use client";
-import { useState } from "react";
+import  useStore  from "../../store/useStore";
 import ChatBubble from "./chat-bubble";
 import TextInput from "./text-input";
+import { useEffect, useState } from "react";
 
 const ChatWindow = () => {
+  const person = useStore(state => state.person);
+  console.log("Chat Window",person)
+
+
   const [messages, setMessages] = useState([
     { text: "Hello!", isUser: false },
     { text: "Hi there!", isUser: true },
@@ -11,6 +16,7 @@ const ChatWindow = () => {
   ]);
 
   const handleInputSubmit = (value) => {
+   
     setMessages((prevMessages) => [
       ...prevMessages,
       { text: value, isUser: true },
@@ -29,7 +35,7 @@ const ChatWindow = () => {
             />
 
             <p className="text-sm font-semibold leading-6 text-gray-900 mt-2 ml-4">
-              "Lindsay Walton"
+              {person}
             </p>
           </div>
           <hr className="border-t border-gray-300 w-full ml-4" />

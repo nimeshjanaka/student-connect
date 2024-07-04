@@ -1,4 +1,4 @@
-import Marks from "../../components/marks/page";
+import Marks from "../../components/marks/Marks";
 import React from "react";
 
 const page = () => {

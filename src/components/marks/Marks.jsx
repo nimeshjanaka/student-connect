@@ -2,25 +2,21 @@ import Gpa from "../gpa/Gpa";
 
 const people = [
   {
-    name: "Marks",
     marks: "58",
 
     module: "software development practice",
   },
   {
-    name: "Marks",
     marks: "74",
 
     module: "Programming ",
   },
   {
-    name: "Marks",
     marks: "95",
 
     module: "Mobile Application development",
   },
   {
-    name: "Marks",
     marks: "88",
 
     module: "Invijdual Project",
@@ -29,8 +25,11 @@ const people = [
 
 export default function Marks() {
   return (
-    <div>
-      <Gpa />
+    <div className="flex flex-col justify-center m-20">
+      <div className=" text-center">
+        <Gpa />
+      </div>
+
       <ul name="list" className="divide-y divide-gray-100">
         {people.map((person) => (
           <li key={person.email} className="flex justify-between gap-x-6 py-5">
@@ -45,7 +44,10 @@ export default function Marks() {
               </div>
             </div>
             <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">
-              <p className="text-sm leading-6 text-gray-900">{person.name}</p>
+              <p className="text-sm leading-6 text-gray-900">
+                {" "}
+                Marks: {person.marks}
+              </p>
               {person.marks ? (
                 <p className="mt-1 text-xs leading-5 text-gray-500">
                   marks <time dateTime={person.marks}>{person.marks}</time>

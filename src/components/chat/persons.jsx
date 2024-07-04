@@ -3,6 +3,8 @@ import SeacrhInput from "../../components/chat/search-input";
 import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 
+import useStore from "../../store/useStore";
+
 const people = [
   {
     name: "Leslie Alexander",
@@ -58,12 +60,13 @@ const people = [
   },
 ];
 
-export default function Persons({onPersonClick}) {
+export default function Persons({ onPersonClick }) {
+  const setImgUrl = useStore((state) => state.setImgUrl);
 
-  const onPersonSelect = (user)=>{
-    onPersonClick(user)
-  }
-
+  const onPersonSelect = (user, url) => {
+    onPersonClick(user);
+    setImgUrl(url);
+  };
 
   return (
     <ul role="list" className="divide-y divide-gray-100">
@@ -72,8 +75,7 @@ export default function Persons({onPersonClick}) {
         <li key={person.email} className="flex justify-between gap-x-6 py-5">
           <button
             className="bg-transparent hover:bg-transparent"
-            onClick={() => onPersonSelect(person.name)}
-            
+            onClick={() => onPersonSelect(person.name, person.imageUrl)}
           >
             <div className="flex min-w-0 gap-x-4">
               <img

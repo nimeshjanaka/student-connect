@@ -6,8 +6,7 @@ import { useEffect, useState } from "react";
 
 const ChatWindow = () => {
   const person = useStore(state => state.person);
-  console.log("Chat Window",person)
-
+  const url = useStore(state => state.imgUrl)
 
   const [messages, setMessages] = useState([
     { text: "Hello!", isUser: false },
@@ -30,7 +29,7 @@ const ChatWindow = () => {
           <div className="flex p-6">
             <img
               className="h-12 w-12  rounded-full "
-              src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              src={url}
               alt=""
             />
 

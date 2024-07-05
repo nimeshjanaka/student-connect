@@ -57,7 +57,7 @@ export default function Header() {
           <Popover className="relative"></Popover>
           <a
             href="/home"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-mono leading-6 text-gray-900"
           >
             Home
           </a>
@@ -69,13 +69,13 @@ export default function Header() {
           </a>
           <a
             href="/connect/friends"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-mono leading-6 text-gray-900"
           >
             Connect
           </a>
           <a
             href="/profile"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-mono leading-6 text-gray-900"
           >
             Profile
           </a>

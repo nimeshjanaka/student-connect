@@ -6,8 +6,8 @@ import Header from "./Header";
 export default function SideBar({ children }) {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex">
-      <div className="fixed inset-y-0 left-0 bg-slate-700 w-1/6 py-4 px-6">
+    <div className="hidden md:flex  ">
+      <div className="  fixed inset-y-0 left-0 bg-slate-700 w-1/6 py-4 px-6">
         <div className="text-white font-bold text-xl mb-4">Logo</div>
 
         <nav className="mt-4">

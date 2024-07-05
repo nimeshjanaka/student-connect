@@ -1,5 +1,5 @@
 
-import FriendsComponent from "../../../../components/Connect/Friends";
+import FriendsComponent from "../../../../components/Connect/Friends/Friends";
 const Friends = () => {
     return ( 
         <div>

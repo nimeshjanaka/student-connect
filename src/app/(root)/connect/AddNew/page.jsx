@@ -1,9 +1,9 @@
 
-import AddNewComponent from "../../../../components/Connect/Add-New";
+import AddNewFriends from "../../../../components/Connect/Friends/add-new";
 const AddNew = () => {
   return (
     <div>
-     <AddNewComponent/>
+     <AddNewFriends/>
     </div>
   );
 };

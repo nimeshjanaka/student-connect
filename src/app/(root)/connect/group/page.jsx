@@ -1,6 +1,7 @@
+import GroupComponent from "../../../../components/Connect/group/Group"
 const Group = () => {
     return ( 
-        <>Group</>
+        <GroupComponent/>
      );
 }
  

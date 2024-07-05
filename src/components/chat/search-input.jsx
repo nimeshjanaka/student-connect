@@ -18,8 +18,8 @@ const SeacrhInput = () => {
         placeholder="Seacrh"
       />
 
-      <Button className=" rounded-3xl bg-transparent">
-        <FaArrowUp className="w-4 h-4 " color="black" />
+      <Button className=" rounded-3xl bg-transparent hover:bg-slate-200">
+        <FaArrowUp className="w-4 h-4  " color="black" />
       </Button>
     </div>
   );

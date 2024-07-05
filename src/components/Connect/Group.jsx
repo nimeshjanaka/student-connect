@@ -1,7 +1,5 @@
 const Group = () => {
-    return ( 
-        <>Group</>
-     );
-}
- 
+  return <>Group</>;
+};
+
 export default Group;

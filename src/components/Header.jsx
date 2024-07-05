@@ -86,27 +86,25 @@ export default function Header() {
           ) : session ? (
             <div className="flex flex-col items-center">
               <div className="flex flex-row items-center">
-              <span className="text-sm font-semibold leading-6 text-gray-900">
-                {session.user.name}
-              </span>
-              {session.user.image && (
-                <Image
-                  className="ml-4 rounded-full"
-                  src={session.user.image}
-                  width={32}
-                  height={32}
-                  alt={session.user.name}
-                />
-              )}
-         </div>
+                <span className="text-sm font-semibold leading-6 text-gray-900">
+                  {session.user.name}
+                </span>
+                {session.user.image && (
+                  <Image
+                    className="ml-4 rounded-full"
+                    src={session.user.image}
+                    width={32}
+                    height={32}
+                    alt={session.user.name}
+                  />
+                )}
+              </div>
               <button
                 className="ml-2 text-xs font-semibold leading-6 text-gray-900"
                 onClick={() => signOut()}
               >
                 Log out
               </button>
-
-
             </div>
           ) : (
             <button

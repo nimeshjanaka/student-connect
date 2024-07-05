@@ -63,38 +63,32 @@ export default function Gpa() {
       >
         <div className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
           <div className="p-4">
-          <div
-             
-                className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50"
-              >
-                <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
-                  <ChartPieIcon
-                    className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div className="ml-8">
-                  <a  className="font-semibold text-gray-900">
-                  Overall GPA
-                    <span className="absolute inset-0" />
-                  </a>
-                  <p className="mt-1 text-gray-600 text-center">You Got a Overall GPA of 3.8</p>
-                </div>
-              </div>
-
-          </div>
-          <div className="divide-x divide-gray-900/5 bg-gray-50">
-
-              <a
-                className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100"
-              >
-                <SquaresPlusIcon
-                  className="h-5 w-5 flex-none text-gray-400"
+            <div className="group relative flex gap-x-6 rounded-lg p-4 hover:bg-gray-50">
+              <div className="mt-1 flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                <ChartPieIcon
+                  className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
                   aria-hidden="true"
                 />
-                Contact Help
-              </a>
-
+              </div>
+              <div className="ml-8">
+                <a className="font-semibold text-gray-900">
+                  Overall GPA
+                  <span className="absolute inset-0" />
+                </a>
+                <p className="mt-1 text-gray-600 text-center">
+                  You Got a Overall GPA of 3.8
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="divide-x divide-gray-900/5 bg-gray-50">
+            <a className="flex items-center justify-center gap-x-2.5 p-3 font-semibold text-gray-900 hover:bg-gray-100">
+              <SquaresPlusIcon
+                className="h-5 w-5 flex-none text-gray-400"
+                aria-hidden="true"
+              />
+              Contact Help
+            </a>
           </div>
         </div>
       </PopoverPanel>
